@@ -2,6 +2,8 @@
 
 C++/OpenGL implementation based on [GPU‐based Fast Ray Casting for a Large Number of Metaballs](https://www.researchgate.net/publication/220507233_GPU-based_Fast_Ray_Casting_for_a_Large_Number_of_Metaballs) by Kanamori et al. (2008)
 
+<img src="https://github.com/DDreher/RaycastedMetaballs/blob/master/images/results.gif" width="300" />
+
 ## Overview
 
 A simple particle system was implemented, defining the maximum number of particles and their maximum life time.
