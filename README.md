@@ -1,4 +1,4 @@
-# RaycastedMetaballs
+# GPU-based Raycasted Metaballs
 
 C++/OpenGL implementation based on [GPU‐based Fast Ray Casting for a Large Number of Metaballs](https://www.researchgate.net/publication/220507233_GPU-based_Fast_Ray_Casting_for_a_Large_Number_of_Metaballs) by Kanamori et al. (2008)
 
