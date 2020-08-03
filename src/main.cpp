@@ -264,7 +264,7 @@ int main()
 
         // Update buffers on GPU
         glBindBuffer(GL_ARRAY_BUFFER, particle_pos_vbo_handle);
-        glBufferData(GL_ARRAY_BUFFER, MAX_PARTICLES * 4 * sizeof(GLfloat), NULL, GL_STREAM_DRAW); // Buffer orphaning, a common way to improve streaming perf. See above link for details.
+        glBufferData(GL_ARRAY_BUFFER, MAX_PARTICLES * 4 * sizeof(GLfloat), NULL, GL_STREAM_DRAW); // Buffer orphaning, a common way to improve streaming perf.
         glBufferSubData(GL_ARRAY_BUFFER, 0, particle_count * sizeof(GLfloat) * 4, particle_position_data);
 
         // 1st attribute buffer : positions of particles' centers
