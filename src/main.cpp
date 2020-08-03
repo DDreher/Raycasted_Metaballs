@@ -22,7 +22,7 @@ int screen_height = 768;
 bool is_stopped = false;	// if true sets delta to 0.0
 bool is_slowmo = false;		// if true multiplies delta with .5
 
-const int MAX_PARTICLES = 75;
+static constexpr int MAX_PARTICLES = 75;
 Particle particles[MAX_PARTICLES];
 glm::vec4 particle_positions_camera[MAX_PARTICLES]; // positions of all particles in camera space
 int last_used_particle_id = 0;
@@ -114,8 +114,8 @@ int main()
     GLuint billboard_shader_handle = LoadShaders("assets/BillboardVertexShader.glsl", "assets/BillboardGeometryShader.glsl", "assets/BillboardFragmentShader.glsl");
     GLuint fluid_shader_handle = LoadShaders("assets/FluidVertexShader.glsl", "assets/FluidGeometryShader.glsl", "assets/FluidFragmentShader.glsl");
 
-    static GLfloat* particle_position_data = new GLfloat[MAX_PARTICLES * 4];
-    
+    GLfloat particle_position_data[MAX_PARTICLES * 4];
+
     for (int i = 0; i < MAX_PARTICLES; ++i)
     {
         particles[i].life = -1.0f;
@@ -230,10 +230,10 @@ int main()
                     }
 
                     // Update buffer that's sent to the GPU
-                    particle_position_data[4 * particle_count + 0] = p.pos.x;
-                    particle_position_data[4 * particle_count + 1] = p.pos.y;
-                    particle_position_data[4 * particle_count + 2] = p.pos.z;
-                    particle_position_data[4 * particle_count + 3] = 1.0f;
+                    particle_position_data[4 * particle_count + 0] = static_cast<GLfloat>(p.pos.x);
+                    particle_position_data[4 * particle_count + 1] = static_cast<GLfloat>(p.pos.y);
+                    particle_position_data[4 * particle_count + 2] = static_cast<GLfloat>(p.pos.z);
+                    particle_position_data[4 * particle_count + 3] = static_cast<GLfloat>(1.0f);
                 }
                 else
                 {
@@ -344,8 +344,8 @@ int main()
     } // As long as ESC key was not pressed or the window still open
     while (glfwGetKey(window, GLFW_KEY_ESCAPE) != GLFW_PRESS && glfwWindowShouldClose(window) == 0);
 
-    delete[] particle_position_data;
-    particle_position_data = nullptr;
+    //delete[] particle_position_data;
+    //particle_position_data = nullptr;
 
     // Cleanup VBO and shader
     glDeleteBuffers(1, &particle_pos_vbo_handle);
