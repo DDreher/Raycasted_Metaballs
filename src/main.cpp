@@ -344,9 +344,6 @@ int main()
     } // As long as ESC key was not pressed or the window still open
     while (glfwGetKey(window, GLFW_KEY_ESCAPE) != GLFW_PRESS && glfwWindowShouldClose(window) == 0);
 
-    //delete[] particle_position_data;
-    //particle_position_data = nullptr;
-
     // Cleanup VBO and shader
     glDeleteBuffers(1, &particle_pos_vbo_handle);
     glDeleteProgram(billboard_shader_handle);
