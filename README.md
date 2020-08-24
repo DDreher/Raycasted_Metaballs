@@ -6,7 +6,9 @@ C++/OpenGL implementation based on [GPU‐based Fast Ray Casting for a Large Num
 
 ## Overview
 
-A simple particle system was implemented, defining the maximum number of particles and their maximum life time.
+"In computer graphics, metaballs are organic-looking n-dimensional isosurfaces, characterised by their ability to meld together when in close proximity to create single, contiguous objects. This "blobby" appearance makes them versatile tools, often used to model organic objects and also to create base meshes for sculpting." ([Wiki](https://en.wikipedia.org/wiki/Metaballs))
+
+For the purpose of rendering such metaballs a simple particle system was implemented.
 Particles are simulated on CPU.
 For each particle a billboard (i.e. a plane that always faces the camera) is generated in the geometry shader.
 In the fragment shader, the implicit surface of the meta balls are calculated for each fragment of the billboards.
