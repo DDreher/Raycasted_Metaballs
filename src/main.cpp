@@ -138,7 +138,7 @@ int main()
     glUseProgram(fluid_shader_handle);
 
     // set our light position
-    glm::vec4 lightPos_world = glm::vec4(10.0f, -5.0f, 40.0f, 1.0f);
+    glm::vec4 lightPos_world = glm::vec4(30.0f, 25.0f, 40.0f, 1.0f);
     glUniform3f(light_pos_handle, lightPos_world.x, lightPos_world.y, lightPos_world.z);
 
     // set viewport uniform
