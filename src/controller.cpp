@@ -1,13 +1,10 @@
 #include "controller.h"
 
-#include "Controller.h"
-
-
 Controller::Controller()
 {
 }
 
-Controller::~Controller(void)
+Controller::~Controller()
 {
 }
 
@@ -42,7 +39,7 @@ void Controller::Update(float delta)
     right = glm::vec3
     (
         sin(horizontal_angle - 3.14f / 2.0f),
-        0,
+        0.0f,
         cos(horizontal_angle - 3.14f / 2.0f)
     );
 
@@ -82,7 +79,10 @@ void Controller::Update(float delta)
         position -= up * delta * speed;
     }
 
-    mat_projection = glm::perspective(initial_fov, 4.0f / 3.0f, 0.1f, 100.0f);
+    static const float ASPECT_RATIO = 4.0f / 3.0f;
+    static const float CLIP_NEAR = 0.1f;
+    static const float CLIP_FAR = 100.0f;
+    mat_projection = glm::perspective(initial_fov, ASPECT_RATIO, CLIP_NEAR, CLIP_FAR);
 
     // Camera matrix
     mat_view = glm::lookAt

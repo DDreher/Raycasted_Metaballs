@@ -1,14 +1,14 @@
 #pragma once
 
+#include <glfw/glfw3.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
-#include <glfw/glfw3.h>
 
 class Controller
 {
 public:
     Controller();
-    virtual ~Controller(void);
+    virtual ~Controller();
 
     void Update(float delta);
     void Init(GLFWwindow* w);

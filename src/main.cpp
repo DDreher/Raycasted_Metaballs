@@ -1,13 +1,13 @@
+#include <algorithm>
 #include <stdio.h>
 #include <stdlib.h>
 #include <vector>
-#include <algorithm>
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
-#include <glm/gtc/type_ptr.hpp>
 #include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 #include <glm/gtx/norm.hpp>
 
 #include "controller.h"
@@ -26,7 +26,7 @@ static constexpr int MAX_PARTICLES = 75;
 Particle particles[MAX_PARTICLES];
 glm::vec4 particle_positions_camera[MAX_PARTICLES]; // positions of all particles in camera space
 int last_used_particle_id = 0;
-float emitter_frequency = 0.05f;    // how long to wait before a particle is emitted?
+float emitter_frequency = 0.05f;    // how long to wait before a particle is emitted
 float emitter_timer = 0.0f;		    // timer to check if we have to emit a particle
 
 int FindFreeParticle()
