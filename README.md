@@ -22,9 +22,18 @@ For the sake of efficiency, the intersection with the implicit surface is first 
 In case an intersection is found, a more accurate position is calculated with binary search.
 For lighting, the normals of the isosurface are calculated by evaluating the density field gradients.
 
+## How to build
+
+Building has only been tested on Win x64.
+
+1. Make sure to have OpenGL installed
+2. Run `GenerateProjectFiles.bat`
+3. Open the generated `RaycastedMetaBalls.sln`
+4. Build and run in the desired configuration (debug / release)
+
 ## Dependencies
 
-OpenGL 3.3    
+[OpenGL 3.3](https://www.opengl.org/)
 [GLEW](http://glew.sourceforge.net/)     
 [GLFW](https://www.glfw.org/)    
 [GLM](https://glm.g-truc.net/0.9.9/index.html)
