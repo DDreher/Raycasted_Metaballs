@@ -1,4 +1,4 @@
-# GPU-based Raycasted Metaballs
+# GPU-based Raymarched Metaballs
 
 C++/OpenGL implementation based on [GPU‐based Fast Ray Casting for a Large Number of Metaballs](https://www.researchgate.net/publication/220507233_GPU-based_Fast_Ray_Casting_for_a_Large_Number_of_Metaballs) by Kanamori et al. (2008)
 
@@ -11,11 +11,11 @@ C++/OpenGL implementation based on [GPU‐based Fast Ray Casting for a Large Num
 For the purpose of rendering such metaballs a simple particle system was implemented.
 Particles are simulated on CPU.
 For each particle a billboard (i.e. a plane that always faces the camera) is generated in the geometry shader.
-In the fragment shader, the implicit surface of the meta balls are calculated for each fragment of the billboards.
+In the fragment shader, the implicit surfaces of the meta balls are calculated for each fragment of the billboards.
 
 ![image_of_procedure](https://github.com/DDreher/RaycastedMetaballs/blob/master/images/procedure.PNG)
 
-A ray is traced from the camera in direction of the fragment.
+A ray is marched from the camera in direction of the fragment.
 The intersection of the ray and the implicit surface is calculated iteratively.
 If no intersection is found, the fragment is discarded.
 For the sake of efficiency, the intersection with the implicit surface is first calculated roughly and with big steps.
